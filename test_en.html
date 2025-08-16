@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature's Essence - Handcrafted Skincare</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f7f4;
+        }
+        header {
+            background: linear-gradient(135deg, #8e9eab 0%, #eef2f3 100%);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .hero h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature {
+            flex: 1 1 300px;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        .feature h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .feature p {
+            color: #555;
+            line-height: 1.8;
+        }
+        .products {
+            margin: 3rem 0;
+        }
+        .products h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #3498db;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.2rem;
+        }
+        .product-info {
+            padding: 1.5rem;
+        }
+        .product-info h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+        .ingredients {
+            background-color: #fff;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .ingredients h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+        .ingredient-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .ingredient {
+            flex: 1 1 200px;
+            max-width: 250px;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .ingredient h3 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        .ingredient p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        footer p {
+            margin-bottom: 1rem;
+        }
+        .contact-info {
+            margin: 1.5rem 0;
+        }
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nature's Essence</h1>
+        <p>Pure Natural · Handcrafted · Your Personalized Skincare Experience</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#ingredients">Ingredients</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="hero">
+            <h2>Embrace Nature, Reveal Radiant Skin</h2>
+            <p>We believe the purest beauty comes from nature. Each skincare product is meticulously handcrafted by us, using premium natural ingredients, free from any harmful chemicals, offering you a truly gentle and effective skincare experience.</p>
+            <a href="#products" class="btn">Explore Products</a>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h3>Pure & Natural</h3>
+                <p>All products are made with 100% natural and organic ingredients, free from preservatives, fragrances, dyes, and other harmful chemicals, gently caring for every inch of your skin.</p>
+            </div>
+            <div class="feature">
+                <h3>Handcrafted</h3>
+                <p>Every item is personally blended by us, with strict control over the production process, ensuring consistent quality and bringing you the unique warmth of handmade craftsmanship.</p>
+            </div>
+            <div class="feature">
+                <h3>Custom Formulas</h3>
+                <p>Offer personalized customization services based on your skin type and needs, making your skincare experience more precise and effective.</p>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">Moisturizing Cream Image</div>
+                    <div class="product-info">
+                        <h3>Deep Moisturizing Cream</h3>
+                        <p>Rich in rosehip oil and shea butter, deeply nourishes dry skin, restoring elasticity and radiance.</p>
+                        <div class="product-price">$28.00</div>
+                        <button class="btn">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Cleanser Image</div>
+                    <div class="product-info">
+                        <h3>Gentle Cleanser</h3>
+                        <p>Uses natural plant-based surfactants to gently cleanse skin, removing dirt and makeup without disrupting the skin barrier.</p>
+                        <div class="product-price">$19.50</div>
+                        <button class="btn">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Serum Image</div>
+                    <div class="product-info">
+                        <h3>Brightening Serum</h3>
+                        <p>Contains Vitamin C and Niacinamide, effectively brightens skin tone, fades dark spots, and improves dullness.</p>
+                        <div class="product-price">$35.00</div>
+                        <button class="btn">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Mask Image</div>
+                    <div class="product-info">
+                        <h3>Soothing Repair Mask</h3>
+                        <p>Infused with chamomile and aloe vera extracts, calms sensitive skin, reduces redness and discomfort, restoring skin to a healthy state.</p>
+                        <div class="product-price">$22.00</div>
+                        <button class="btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ingredients" class="ingredients">
+            <h2>Core Ingredients Revealed</h2>
+            <div class="ingredient-list">
+                <div class="ingredient">
+                    <h3>Rosehip Oil</h3>
+                    <p>Rich in Vitamins A and C, promotes cell regeneration, reduces fine lines, brightens skin tone, and improves elasticity.</p>
+                </div>
+                <div class="ingredient">
+                    <h3>Shea Butter</h3>
+                    <p>Natural moisturizing factor, deeply hydrates dry skin, forms a protective barrier, and prevents moisture loss.</p>
+                </div>
+                <div class="ingredient">
+                    <h3>Jojoba Oil</h3>
+                    <p>Molecular structure similar to human sebum, easily absorbed, regulates oil production, and balances skin's moisture and oil.</p>
+                </div>
+                <div class="ingredient">
+                    <h3>Chamomile Extract</h3>
+                    <p>Exceptional anti-inflammatory and soothing properties, ideal for sensitive skin, relieves discomfort and redness.</p>
+                </div>
+                <div class="ingredient">
+                    <h3>Aloe Vera Gel</h3>
+                    <p>Natural humectant, soothes sun-exposed skin, promotes wound healing, and keeps skin smooth and hydrated.</p>
+                </div>
+                <div class="ingredient">
+                    <h3>Vitamin C</h3>
+                    <p>Potent antioxidant, inhibits melanin production, brightens skin, and prevents photoaging.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin: 3rem 0 2rem; padding-bottom: 1rem; border-bottom: 3px solid #3498db;">About Us</h2>
+            <div style="background-color: #fff; padding: 3rem 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555; text-align: justify;">
+                    "Nature's Essence" was born from a passion for natural skincare. Founder [Your Name], with [Your Background, e.g., years of experience in chemistry/botany], deeply concerned about the potential harm of chemical ingredients in commercial skincare products, decided to return to nature, using the purest natural power to care for the skin.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555; text-align: justify; margin-top: 1.5rem;">
+                    We insist on small-batch handcrafting to ensure the freshness and quality of every product. All ingredients are strictly selected, with priority given to organically certified plant components. Our laboratory maintains the highest hygiene standards, and the production process is transparent and traceable.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555; text-align: justify; margin-top: 1.5rem;">
+                    We believe true beauty is healthy, natural, and sustainable. Choosing "Nature's Essence" is not just choosing a skincare product, but choosing a lifestyle that respects the skin and respects nature.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <p>Contact Us</p>
+            <div class="contact-info">
+                <p>📧 Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+                <p>📱 WeChat: your_wechat_id</p>
+                <p>📞 Phone: +1 (555) 123-4567</p>
+            </div>
+            <p>&copy; 2025 Nature's Essence. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple buy button functionality
+        document.querySelectorAll('.btn').forEach(button => {
+            if (button.textContent === 'Buy Now') {
+                button.addEventListener('click', function() {
+                    const productName = this.closest('.product-info').querySelector('h3').textContent;
+                    alert(`You have selected: ${productName}\n\nPlease contact us via the information below to complete your order.`);
+                });
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
